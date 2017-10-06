@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HomeController">
+   <top>
+      <Label alignment="TOP_CENTER" prefHeight="28.0" prefWidth="494.0" text="Cadastro de Bugs" textFill="#0077ff" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets left="10.0" right="10.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </Label>
+   </top>
+   <center>
+      <GridPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="477.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.0" minWidth="10.0" prefWidth="91.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="387.0" minWidth="10.0" prefWidth="386.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="150.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label style="-fx-font-weight: bold;" text="Nome:" />
+            <TextField fx:id="textFieldNome" GridPane.columnIndex="1" />
+            <ComboBox fx:id="selectCargo" minWidth="131.0" prefHeight="25.0" prefWidth="131.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label style="-fx-font-weight: bold;" text="Sistema" GridPane.rowIndex="2" />
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <children>
+                  <Button fx:id="buttonOk" mnemonicParsing="false" onAction="#handleButtonOk" text="Ok" />
+                  <Button fx:id="buttonClose" mnemonicParsing="false" onAction="#handleButtonClose" text="Sair" textFill="#e81919" />
+               </children>
+               <GridPane.margin>
+                  <Insets left="275.0" top="5.0" />
+               </GridPane.margin>
+            </HBox>
+            <TextField fx:id="textFieldEmail" layoutX="101.0" layoutY="25.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextArea fx:id="textAreaDescricao" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label layoutX="10.0" layoutY="29.0" style="-fx-font-weight: bold;" text="Email:" GridPane.rowIndex="1" />
+            <Label style="-fx-font-weight: bold;" text="Titulo" GridPane.rowIndex="3" />
+            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="3">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="214.0" minWidth="10.0" prefWidth="190.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="259.0" minWidth="10.0" prefWidth="196.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="textFieldTitulo" maxWidth="175.0" prefHeight="25.0" prefWidth="150.0" />
+                  <GridPane GridPane.columnIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="68.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="128.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Prioridade" />
+                        <ComboBox fx:id="selectPrioridade" prefWidth="150.0" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+            <Label style="-fx-font-weight: bold;" text="Descrição" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+   </center>
+   <bottom>
+      <Label fx:id="labelResultado" prefHeight="56.0" prefWidth="533.0" BorderPane.alignment="BASELINE_CENTER">
+         <BorderPane.margin>
+            <Insets left="50.0" />
+         </BorderPane.margin>
+      </Label>
+   </bottom>
+</BorderPane>
